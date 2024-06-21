@@ -1,0 +1,29 @@
+﻿@model IEnumerable<dynamic>
+
+@{
+    ViewData["Title"] = "Ciudades con Número de Clientes";
+}
+
+<h1>Ciudades con Número de Clientes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ciudad</th>
+            <th>Número de Clientes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>@item.Ciudad</td>
+                    <td>@item.ClientesCount</td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>

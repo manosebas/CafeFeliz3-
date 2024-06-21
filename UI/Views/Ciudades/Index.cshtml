@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Ciudad>
+
+@{
+    ViewData["Title"] = "Ciudades";
+}
+
+<h1>Ciudades</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Crear Nueva Ciudad</a>
+</p>
+<p>
+    <a class="btn btn-primary" asp-action="CiudadesConNumeroClientes">Ver Ciudades con Número de Clientes</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                </tr>
+
+        }
+    </tbody>
+</table>
